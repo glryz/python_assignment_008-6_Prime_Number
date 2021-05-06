@@ -1,0 +1,18 @@
+""" Print the prime numbers which are between 1 to entered limit number (n).
+You can use a nested for loop.
+Collect all these numbers into a list
+"""
+
+limit = int(input('Up to which number should the prime numbers be listed? :'))
+num_list = [*range(1, limit)]
+prime_list = []        # asal sayıları bu listede toplayacağız.
+for i in num_list :
+    control_list = []  # i sayısının kendisine kadar olan sayılar içerisinde tam bölünebildiklerini bu listede toplayacağız.   
+    for j in [*range(1, i)] :  # amacımız i'nin kaç adet sayıya tam bölünebildiğini bulmaktır. 
+        if not i % j :        
+            control_list.append(j)
+        else :
+            pass
+    if i!= 1 and (len(control_list) == 1) : # sayı 1 değilse ve kontrol listesinde 1 eleman varsa sayı asaldır.(çünkü sayıya kadar kontrol etmiştik)
+        prime_list.append(i)
+print(prime_list)
